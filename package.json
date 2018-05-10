@@ -1,0 +1,23 @@
+{
+  "name": "hash_checker",
+  "version": "1.0.0",
+  "description": "Hash Checker",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "gulp",
+    "run": "npm run build && node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/buffers": "^0.1.31",
+    "@types/node": "^10.0.6",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
