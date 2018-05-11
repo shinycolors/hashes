@@ -21,7 +21,7 @@ check_hashes()
         "\n";
       throw new Error(errstr);
     } else {
-      console.log("Test Suceess.");
+      console.log("Test Success.");
     }
   })
   .catch(err => {
