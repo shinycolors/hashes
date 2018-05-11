@@ -4,7 +4,9 @@
 
 > Check hashes and store for Something about Something.
 
-Checks Results: ![Check Results](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiWWp0WURSUVVIYVNVR0FXTFVDUVE3a1cxdEZRakgvemsvRE55WkpCYXErTDUvUFU0VGR5TGFYK3VOSlltN1FCZXB2b2hZNTIvMDc0aXlQSXJpVSszL3dVPSIsIml2UGFyYW1ldGVyU3BlYyI6ImVmY1RIK1V2aHpLN2sxZzAiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+## Check Results
+Runs on daily at 3:00AM UTC<br>
+![Check Results](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiWWp0WURSUVVIYVNVR0FXTFVDUVE3a1cxdEZRakgvemsvRE55WkpCYXErTDUvUFU0VGR5TGFYK3VOSlltN1FCZXB2b2hZNTIvMDc0aXlQSXJpVSszL3dVPSIsIml2UGFyYW1ldGVyU3BlYyI6ImVmY1RIK1V2aHpLN2sxZzAiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 ## How to run
 ```bash
