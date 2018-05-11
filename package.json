@@ -1,5 +1,5 @@
 {
-  "name": "hash_checker",
+  "name": "hashes",
   "version": "1.0.0",
   "description": "Hash Checker",
   "main": "dist/main.js",
