@@ -13,10 +13,10 @@ Running on AWS NorthEast-1 CodeBuild nodes with `yarn test:check`
 If you want to check logs, Please run this script on your local machine since AWS CodeBuild doesn't support share logs on public.
 
 ### Check Status
- - <span style="color:green">■</span> passing: No changes detected.
- - <span style="color:red">■</span> failing: Changes detected, or Something is blocking this script.
- - in_progress: Please wait.
- - unknown: Please wait. if it keeps 'unknown' tomorrow, please submit issue.
+ - ![GreenBlock](https://placehold.it/15/95ff15/000000?text=+) passing: No changes detected.
+ - ![RedBlock](https://placehold.it/15/f03c15/000000?text=+) failing: Changes detected, or Something is blocking this script.
+ - ![BlueBlock](https://placehold.it/15/1589F0/000000?text=+) in_progress: Please wait.
+ - ![GrayBlock](https://placehold.it/15/808080/000000?text=+) unknown: Please wait. if it keeps 'unknown' tomorrow, please submit issue.
 
 ## How to run
 ```bash
