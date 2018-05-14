@@ -10,7 +10,7 @@ Runs on daily at 3:00 UTC. (12:00 in GMT+9, JST) <br>
 
 Running on AWS NorthEast-1 CodeBuild nodes with `yarn test:check`
 
-If you want to check logs, Please run this script on your local machine since AWS CodeBuild doesn't support share logs on public.
+If you want to check logs, Please [run this script on your local machine](#how-to-run) since AWS CodeBuild doesn't support share logs on public.
 
 ### Check Status
  - ![GreenBlock](https://placehold.it/15/95ff15/000000?text=+) passing: No changes detected.
@@ -29,4 +29,7 @@ $ npm run start # or `yarn start`
 # Test.
 # It will be panic when found changes.
 $ npm run test:check
+
+# Lint
+$ npm run lint
 ```
