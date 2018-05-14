@@ -1,4 +1,8 @@
+# Build things.
 node_modules/*
 dist/*
-
 !dist/.gitkeep
+
+# User definable configs.
+config/*
+!config/*.example.*

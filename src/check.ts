@@ -1,9 +1,14 @@
 import axios from "axios";
 import fs = require("fs");
+import yn = require("yn");
 import createHash from "./hash";
 
 async function check_hashes(): Promise<object[] | Error> {
   const hashfile = require("../hashes.json");
+  const proxyConfig =
+    yn(process.env.ENABLE_PROXY) === true
+      ? require("../config/proxy.json")
+      : { proxy: false };
 
   try {
     return new Promise<object[]>(async (resolve, reject) => {
@@ -15,7 +20,8 @@ async function check_hashes(): Promise<object[] | Error> {
               Accept: "image/webp,image/apng,image/*,*/*;q=0.8"
             },
             method: "GET",
-            url: "https://shinycolors.enza.fun/assets/" + hashedName
+            url: "https://shinycolors.enza.fun/assets/" + hashedName,
+            ...proxyConfig
           })
             .then(async response => {
               const filehash = await createHash(response.data);
