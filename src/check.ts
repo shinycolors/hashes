@@ -1,6 +1,6 @@
 import axios from "axios";
 import fs = require("fs");
-import yn = require("yn");
+import yn from "yn";
 import createHash from "./hash";
 
 function loadProxyConfig() {
