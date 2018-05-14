@@ -35,7 +35,7 @@ $ npm run lint
 ```
 
 ## Configure proxy
-\***May not work. related to axios/axios#925**\*
+\***May not work. related to axios/axios#925\***
 
 Example config is on [`config/proxy.example.json`](./config/proxy.example.json).
 

@@ -1,13 +1,11 @@
 import axios from "axios";
 import fs = require("fs");
-import yn from "yn";
+import yn = require("yn");
 import createHash from "./hash";
 
 function loadProxyConfig() {
   try {
-    return yn(process.env.ENABLE_PROXY) === true
-      ? require("../config/proxy.json")
-      : { proxy: false };
+    return require("../config/proxy.json");
   } catch (e) {
     /* tslint:disable-next-line:no-console */
     console.log("Error: Fail to load proxy settings! Disable Proxy...\n" + e);
@@ -17,7 +15,10 @@ function loadProxyConfig() {
 
 async function check_hashes(): Promise<object[] | Error> {
   const hashfile = require("../hashes.json");
-  const proxyConfig = loadProxyConfig();
+  const proxyConfig =
+    yn(process.env.ENABLE_PROXY) === true
+      ? loadProxyConfig()
+      : { proxy: false };
 
   try {
     return new Promise<object[]>(async (resolve, reject) => {

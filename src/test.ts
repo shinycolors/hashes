@@ -16,8 +16,8 @@ check_hashes()
       const errstr =
         "Test is unsuccessful.\n" +
         "Maybe hashes are changed or Forbidden by AWS/enza\n" +
-        "Received items:\n" +
-        item +
+        "Received items: " +
+        JSON.stringify(item) +
         "\n";
       throw new Error(errstr);
     } else {
