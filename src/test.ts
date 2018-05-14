@@ -1,7 +1,7 @@
 import check_hashes from "./check";
 
 async function process_exit() {
-  setTimeout(function() {
+  setTimeout(() => {
     process.exit(1);
   }, 1000);
 }
@@ -11,7 +11,7 @@ check_hashes()
     if (
       !Array.isArray(item) ||
       typeof item === "undefined" ||
-      item.length != 0
+      item.length !== 0
     ) {
       const errstr =
         "Test is unsuccessful.\n" +
@@ -21,7 +21,8 @@ check_hashes()
         "\n";
       throw new Error(errstr);
     } else {
-      console.log("Test Success.");
+      /* tslint:disable-next-line:no-console */
+      console.info("Test Success.");
     }
   })
   .catch(err => {

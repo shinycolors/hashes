@@ -1,5 +1,5 @@
-import check_hashes from "./check";
 import fs = require("fs");
+import check_hashes from "./check";
 
 check_hashes()
   .then(item => {
@@ -8,6 +8,7 @@ check_hashes()
   .catch(err => {
     throw new Error(err);
   });
+
 /*
 ** The basic source code that extract hashes from files.
 
