@@ -5,4 +5,3 @@ dist/*
 
 # User definable configs.
 config/*
-!config/*.example.*

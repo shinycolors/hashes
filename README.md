@@ -33,3 +33,11 @@ $ npm run test:check
 # Lint
 $ npm run lint
 ```
+
+## Configure proxy
+Example config is on [`config/proxy.example.json`](./config/proxy.example.json).
+
+Change name to `config/proxy.json` and change settings to your proxy.
+
+Set `ENABLE_PROXY=1` to enable proxy.
+

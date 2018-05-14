@@ -3,12 +3,21 @@ import fs = require("fs");
 import yn = require("yn");
 import createHash from "./hash";
 
-async function check_hashes(): Promise<object[] | Error> {
-  const hashfile = require("../hashes.json");
-  const proxyConfig =
-    yn(process.env.ENABLE_PROXY) === true
+function loadProxyConfig() {
+  try {
+    return yn(process.env.ENABLE_PROXY) === true
       ? require("../config/proxy.json")
       : { proxy: false };
+  } catch (e) {
+    /* tslint:disable-next-line:no-console */
+    console.log("Error: Fail to load proxy settings! Disable Proxy...\n" + e);
+    return { proxy: false };
+  }
+}
+
+async function check_hashes(): Promise<object[] | Error> {
+  const hashfile = require("../hashes.json");
+  const proxyConfig = loadProxyConfig();
 
   try {
     return new Promise<object[]>(async (resolve, reject) => {
