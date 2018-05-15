@@ -73,16 +73,18 @@ async function check_hashes(): Promise<object[] | Error> {
             .catch((err: any) => {
               if (err.statusCode === 403) {
                 if (
-                  err.message.includes(
-                    "The Amazon CloudFront distribution is configured to block access from your country."
-                  )
+                  err.response.body
+                    .toString()
+                    .includes(
+                      "The Amazon CloudFront distribution is configured to block access from your country."
+                    )
                 ) {
                   throw new Error(
-                    "It's blocked by country level. Please turn on proxy or vpn."
+                    "It's blocked by AWS level. Please turn on proxy or vpn."
                   );
                 } else {
                   throw new Error(
-                    "It's blocked but not country level. Maybe you are banned from enza?"
+                    "It's blocked but not AWS level. Maybe you are banned from enza?"
                   );
                 }
               }
