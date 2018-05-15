@@ -35,11 +35,14 @@ $ npm run lint
 ```
 
 ## Configure proxy
-\***May not work. related to axios/axios#925\***
+There's two option.
 
+### Config File Method
 Example config is on [`config/proxy.example.json`](./config/proxy.example.json).
 
 Change name to `config/proxy.json` and change settings to your proxy.
 
 Set `ENABLE_PROXY=1` to enable proxy.
 
+### Environment Method
+[See `request`'s Environment proxy description](https://github.com/request/request#controlling-proxy-behaviour-using-environment-variables)
