@@ -13,20 +13,20 @@ check_hashes()
       typeof item === "undefined" ||
       item.length !== 0
     ) {
-      const errstr =
+      const errStr =
         "Test is unsuccessful.\n" +
         "Maybe hashes are changed or Forbidden by AWS/enza\n" +
         "Received items: " +
         JSON.stringify(item) +
         "\n";
-      throw new Error(errstr);
+      throw new Error(errStr);
     } else {
       /* tslint:disable-next-line:no-console */
       console.info("Test Success.");
     }
   })
   .catch(err => {
-    const errstr = "Test Failed.\n" + "Error:\n" + err.stack;
+    const errStr = "Test Failed.\n" + "Error:\n" + err.stack;
     process_exit();
-    throw new Error(errstr);
+    throw new Error(errStr);
   });

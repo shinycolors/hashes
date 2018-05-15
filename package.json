@@ -23,7 +23,8 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5",
     "yn": "^2.0.0"
   }
 }
