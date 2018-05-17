@@ -2,19 +2,24 @@
   "name": "hashes",
   "version": "1.0.0",
   "description": "Hash Checker",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
     "build": "gulp",
-    "start": "npm run build && node dist/index.js",
-    "test:check": "npm run build && node dist/test.js",
-    "lint": "tslint --project tsconfig.json --format prose"
+    "build:dirty": "gulp build",
+    "clean": "gulp clean",
+    "start": "node dist/index.js",
+    "test:check": "node dist/test.js",
+    "lint": "tslint --project tsconfig.json --format prose",
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "@types/buffers": "^0.1.31",
     "@types/node": "^10.0.6",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-sequence": "^1.0.0",
     "gulp-typescript": "^4.0.2",
     "prettier": "^1.12.1",
     "tslint": "^5.10.0",
