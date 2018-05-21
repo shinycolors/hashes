@@ -12,11 +12,11 @@ gulp.task("build", function() {
 });
 
 gulp.task("clean", function() {
-  return del(['dist/**/*', '!dist/.gitkeep']);
+  return del(["dist/**/*", "!dist/.gitkeep"]);
 });
 
 gulp.task("watch", function() {
   gulp.watch("src/**/*", ["build"]);
 });
 
-gulp.task("default", sequence('clean', 'build'));
+gulp.task("default", sequence("clean", "build"));
