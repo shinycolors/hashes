@@ -1,3 +1,12 @@
+sudo: false
+dist: trusty
+language: node_js
+node_js:
+  - "8"
+
+script:
+  - echo "Nothing about build the code."
+
 deploy:
   provider: releases
   api_key: $GITHUB_API_KEY
