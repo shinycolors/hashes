@@ -1,0 +1,9 @@
+deploy:
+  provider: releases
+  api_key: $GITHUB_API_KEY
+  file:
+    - "hashes.json"
+    - "changes.json"
+  skip_cleanup: true
+  on:
+    tags: true
