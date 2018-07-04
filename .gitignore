@@ -1,7 +1,8 @@
 # Build things.
 node_modules/*
 dist/*
-!dist/.gitkeep
+!dist/**/.gitkeep
+downloads/**/*
 
 # User definable configs.
 config/*

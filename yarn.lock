@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/argparse@^1.0.34":
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/@types/argparse/-/argparse-1.0.34.tgz#3ee09ced0285c7577d879c51b8cf092125591e68"
+
 "@types/buffers@^0.1.31":
   version "0.1.31"
   resolved "https://registry.yarnpkg.com/@types/buffers/-/buffers-0.1.31.tgz#ae628d3e97e5862c86743c22bdaef33a93e094b0"
@@ -73,7 +77,7 @@ archy@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/archy/-/archy-1.0.0.tgz#f9c8c13757cc1dd7bc379ac77b2c62a5c2868c40"
 
-argparse@^1.0.7:
+argparse@^1.0.10, argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
   dependencies:

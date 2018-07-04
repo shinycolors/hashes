@@ -1,9 +1,62 @@
+import { ArgumentParser } from "argparse";
 import fs = require("fs");
 import check_hashes from "./check";
 
+let saveChanges = false;
+
+function init() {
+  const parser = new ArgumentParser({
+    addHelp: true,
+    description: "Hash checker",
+    version: "0.0.1"
+  });
+  parser.addArgument(["-p", "--proxy"], {
+    help: "Enable proxy, override settings when receive args",
+    nargs: "*"
+  });
+  parser.addArgument(["-w", "--write"], {
+    action: "storeTrue",
+    help: "Write changes to `hashes.json`"
+  });
+
+  const args = parser.parseArgs();
+
+  try {
+    if (args.proxy) {
+      const name = "PROXY";
+      if (!process.env.hasOwnProperty(name)) {
+        const enableName = "ENABLE_PROXY";
+        const proxyConfig = require("../config/proxy.json").proxy;
+        process.env[name] = args.proxy[0] || proxyConfig;
+        process.env[enableName] = "1";
+      }
+    }
+    if (args.write) {
+      saveChanges = true;
+    }
+  } catch (e) {
+    throw new Error(e);
+  }
+}
+
+init();
 check_hashes()
   .then(item => {
     fs.writeFileSync("changes.json", JSON.stringify(item), "utf-8");
+
+    if (saveChanges) {
+      const items: any[] = item instanceof Error ? [] : item;
+      const hashes: any = require("../hashes.json");
+      for (const key of Object.keys(hashes)) {
+        for (const i of items) {
+          if (i.filename === key) {
+            hashes[key] = i.new_hash;
+          }
+        }
+      }
+
+      fs.writeFileSync("hashes.json", JSON.stringify(hashes), "utf-8");
+    }
   })
   .catch(err => {
     throw new Error(err);

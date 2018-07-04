@@ -9,12 +9,14 @@
     "build": "gulp",
     "build:dirty": "gulp build",
     "clean": "gulp clean",
+    "download": "node dist/download.js",
     "start": "node dist/index.js",
     "test:check": "node dist/test.js",
     "lint": "tslint --project tsconfig.json --format prose",
     "watch": "gulp watch"
   },
   "devDependencies": {
+    "@types/argparse": "^1.0.34",
     "@types/buffers": "^0.1.31",
     "@types/node": "^10.0.6",
     "del": "^3.0.0",
@@ -28,6 +30,7 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
+    "argparse": "^1.0.10",
     "request": "^2.85.0",
     "request-promise-native": "^1.0.5",
     "yn": "^2.0.0"

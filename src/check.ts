@@ -4,7 +4,7 @@ import createHash from "./hash";
 
 function loadProxyConfig() {
   try {
-    const proxy = require("../config/proxy.json").proxy;
+    const proxy = process.env.PROXY || require("../config/proxy.json").proxy;
     return { proxy };
   } catch (e) {
     /* tslint:disable-next-line:no-console */
