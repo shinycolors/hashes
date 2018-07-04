@@ -13,7 +13,7 @@ script:
   - echo "Nothing about build the code."
 
 before_deploy:
-  - export RELEASE_BODY=`echo 'Update '$TRAVIS_TAG'\n\nCheck \`hashes.json\` and \`change.json\`'`
+  - export RELEASE_BODY=`echo 'Update '$TRAVIS_TAG'<br><br>Check \`hashes.json\` and \`change.json\`'`
 
 deploy:
   provider: releases
