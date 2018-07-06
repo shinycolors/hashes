@@ -23,7 +23,7 @@ If you want to check logs, Please [run this script on your local machine](#how-t
 # Install dependencies.
 $ npm i # or `yarn install`
 
-# Run.
+# Run, `-w` to write to `hashes.json` too
 $ npm run start # or `yarn start`
 
 # Test.
@@ -32,10 +32,13 @@ $ npm run test:check
 
 # Lint
 $ npm run lint
+
+# `hashes.json` assets downloader, `-c` to only download recent change.
+$ npm run download
 ```
 
 ## Configure proxy
-There's two option.
+There's three option.
 
 ### Config File Method
 Example config is on [`config/proxy.example.json`](./config/proxy.example.json).
@@ -43,6 +46,9 @@ Example config is on [`config/proxy.example.json`](./config/proxy.example.json).
 Change name to `config/proxy.json` and change settings to your proxy.
 
 Set `ENABLE_PROXY=1` to enable proxy.
+
+### Arguments Method
+`-p` or `--proxy` can work with `start` and `download`. Note that `test:check` is ignore arguments.
 
 ### Environment Method
 [See `request`'s Environment proxy description](https://github.com/request/request#controlling-proxy-behaviour-using-environment-variables)
